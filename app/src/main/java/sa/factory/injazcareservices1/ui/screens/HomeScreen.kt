@@ -52,7 +52,8 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'Mada Contactless EMV L2 NFC + GPS Dispatch'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    val defaultPeripheral = "Mada Contactless EMV L2 NFC + GPS Dispatch"
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: defaultPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "NFC EMV L2: TX/RX 0.3s | GPS Dispatch: 24.7°N 46.7°E, 12km/h", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
